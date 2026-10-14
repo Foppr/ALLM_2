@@ -1,0 +1,320 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go east,,"-= Livingroom =-
+Wow! You're in a livingroom. You begin to take stock of what's here.
+
+As if things weren't amazing enough already, you can even see a sofa. The sofa is comfy. The sofa appears to be empty.
+
+There is a closed front door leading east. There is an exit to the south. Don't worry, there is no door. There is an exit to the west. Don't worry, there is no door.
+
+
+>                                                                                                                                -= Livingroom =-0/2",0,False
+1,go south,,"-= Kitchen =-
+You've entered a kitchen.
+
+You bend down to tie your shoe. When you stand up, you notice a fridge. The light flickers for a second, but nothing else happens. You scan the room for an oven, and you find an oven. You make out a table! You see a cookbook on the table. You scan the room for a counter, and you find a counter. The counter is vast. On the counter you can make out a knife. You see a stove. The stove is conventional. However, the stove, like an empty stove, has nothing on it. Oh! Why couldn't there just be stuff on it?
+
+There is a closed frosted-glass door leading south. There is an exit to the north.
+
+
+>                                                                                                                                -= Kitchen =-0/3",0,False
+2,examine cookbook,,"You open the copy of ""Cooking: A Modern Approach (3rd Ed.)"" and start reading:
+
+Recipe #1
+---------
+Gather all following ingredients and follow the directions to prepare this tasty meal.
+
+Ingredients:
+green hot pepper
+  orange bell pepper
+  tomato
+  white tuna
+  yellow apple
+
+Directions:
+slice the green hot pepper
+  fry the green hot pepper
+  dice the orange bell pepper
+  grill the orange bell pepper
+  chop the tomato
+  fry the tomato
+  slice the white tuna
+  fry the white tuna
+  dice the yellow apple
+  fry the yellow apple
+  prepare meal
+
+
+
+>                                                                                                                                -= Kitchen =-0/4",0,False
+3,take knife from counter,,"You take the knife from the counter.
+
+
+>                                                                                                                                -= Kitchen =-0/5",0,False
+4,slice green hot pepper with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/5",0,False
+5,take green hot pepper from counter,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/5",0,False
+6,take green hot pepper from fridge,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/5",0,False
+7,examine fridge,,"The fridge looks durable. It is closed.
+
+
+>                                                                                                                                -= Kitchen =-0/6",0,False
+8,open fridge with knife,,"That's unlocked at the moment.
+
+
+>                                                                                                                                -= Kitchen =-0/7",0,False
+9,open fridge,,"You open the fridge.
+
+
+>                                                                                                                                -= Kitchen =-0/8",0,False
+10,take green hot pepper from fridge,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/8",0,False
+11,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/8",0,False
+12,examine fridge,,"The fridge looks durable. It is open.
+
+
+>                                                                                                                                -= Kitchen =-0/9",0,False
+13,open fridge,,"That's already open.
+
+
+>                                                                                                                                -= Kitchen =-0/10",0,False
+14,examine fridge,,"The fridge looks durable. It is open.
+
+
+>                                                                                                                                -= Kitchen =-0/11",0,False
+15,take green hot pepper from fridge,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/11",0,False
+16,take green hot pepper from fridgecontents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/11",0,False
+17,take greenhotpepper from fridgecontents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/11",0,False
+18,take green hot pepper from fridge contents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/11",0,False
+19,take green hot pepper from fridge contents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/11",0,False
+20,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/11",0,False
+21,examine fridge,,"The fridge looks durable. It is open.
+
+
+>                                                                                                                                -= Kitchen =-0/12",0,False
+22,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/12",0,False
+23,examine fridge,,"The fridge looks durable. It is open.
+
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+24,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+25,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+26,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+27,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+28,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+29,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+30,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+31,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+32,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+33,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+34,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+35,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+36,take carrot from fridge contents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+37,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+38,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+39,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+40,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+41,examine fridgecontents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+42,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+43,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+44,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+45,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+46,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+47,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+48,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+49,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+50,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+51,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+52,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+53,take carrot from fridge contents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+54,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+55,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+56,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+57,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+58,examine fridgecontents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+59,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+60,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+61,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+62,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+63,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+64,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/13",0,False
+65,look,,"-= Kitchen =-
+You've entered a kitchen.
+
+You bend down to tie your shoe. When you stand up, you notice a fridge. The light flickers for a second, but nothing else happens. Empty! What kind of nightmare TextWorld is this? You scan the room for an oven, and you find an oven. You make out a table! You see a cookbook on the table. You scan the room for a counter, and you find a counter. The counter is vast. But there isn't a thing on it. Aw, here you were, all excited for there to be things on it! You see a stove. The stove is conventional. However, the stove, like an empty stove, has nothing on it. Oh! Why couldn't there just be stuff on it?
+
+There is a closed frosted-glass door leading south. There is an exit to the north.
+
+
+>                                                                                                                                -= Kitchen =-0/14",0,False
+66,examine cookbook,,"You open the copy of ""Cooking: A Modern Approach (3rd Ed.)"" and start reading:
+
+Recipe #1
+---------
+Gather all following ingredients and follow the directions to prepare this tasty meal.
+
+Ingredients:
+green hot pepper
+  orange bell pepper
+  tomato
+  white tuna
+  yellow apple
+
+Directions:
+slice the green hot pepper
+  fry the green hot pepper
+  dice the orange bell pepper
+  grill the orange bell pepper
+  chop the tomato
+  fry the tomato
+  slice the white tuna
+  fry the white tuna
+  dice the yellow apple
+  fry the yellow apple
+  prepare meal
+
+
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+67,take carrot from fridge contents,,"You can't see any such thing.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+68,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+69,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+70,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+71,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+72,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+73,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+74,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+75,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+76,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+77,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+78,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,False
+79,examine fridge contents,,"I only understood you as far as wanting to examine the fridge.
+
+>                                                                                                                                -= Kitchen =-0/15",0,True

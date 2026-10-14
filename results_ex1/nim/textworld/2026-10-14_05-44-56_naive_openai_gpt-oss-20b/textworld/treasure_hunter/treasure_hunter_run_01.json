@@ -1,0 +1,49 @@
+{
+    "task": "treasure_hunter",
+    "action_frequency": {
+        "look": 13,
+        "goal": 10,
+        "go north": 9,
+        "take key": 1,
+        "go south": 11,
+        "go east": 15,
+        "go west": 14,
+        "open passageway": 2,
+        "unlock passageway with key": 1,
+        "inventory": 2,
+        "take Hendersons limited edition key": 1,
+        "open boxmessage": 1
+    },
+    "input_tokens": 114502,
+    "output_tokens": 13075,
+    "done": true,
+    "episode_return": 0.0,
+    "num_steps": 80,
+    "failed_candidates": [],
+    "progression": 0.0,
+    "process_num": "ForkProcess-2",
+    "seed": 2069017608,
+    "agent": {
+        "type": "naive",
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "max_cot_history": 1,
+        "max_icl_history": 1000,
+        "cache_icl": false
+    },
+    "client": {
+        "client_name": "nvidia",
+        "model_id": "openai/gpt-oss-20b",
+        "base_url": "https://integrate.api.nvidia.com/v1",
+        "generate_kwargs": {
+            "temperature": 1.0,
+            "max_tokens": 8192,
+            "thinking_budget": null
+        },
+        "timeout": 60,
+        "max_retries": 8,
+        "delay": 4,
+        "alternate_roles": false
+    }
+}
