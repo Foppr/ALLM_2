@@ -1,0 +1,42 @@
+{
+    "task": "coin_collector",
+    "action_frequency": {
+        "go east": 23,
+        "go west": 19,
+        "go north": 20,
+        "go south": 17,
+        "take coin": 1
+    },
+    "input_tokens": 106478,
+    "output_tokens": 13568,
+    "done": true,
+    "episode_return": 0.0,
+    "num_steps": 80,
+    "failed_candidates": [],
+    "progression": 0.0,
+    "process_num": "ForkProcess-1",
+    "seed": 790448585,
+    "agent": {
+        "type": "naive",
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "max_cot_history": 1,
+        "max_icl_history": 1000,
+        "cache_icl": false
+    },
+    "client": {
+        "client_name": "nvidia",
+        "model_id": "openai/gpt-oss-20b",
+        "base_url": "https://integrate.api.nvidia.com/v1",
+        "generate_kwargs": {
+            "temperature": 1.0,
+            "max_tokens": 8192,
+            "thinking_budget": null
+        },
+        "timeout": 60,
+        "max_retries": 8,
+        "delay": 4,
+        "alternate_roles": false
+    }
+}
