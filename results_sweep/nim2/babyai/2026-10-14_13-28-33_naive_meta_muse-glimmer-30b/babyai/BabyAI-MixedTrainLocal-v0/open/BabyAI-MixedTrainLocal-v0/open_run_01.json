@@ -1,0 +1,43 @@
+{
+    "task": "BabyAI-MixedTrainLocal-v0/open",
+    "action_frequency": {
+        "go forward": 22,
+        "turn left": 7,
+        "toggle": 3,
+        "pick up": 1,
+        "turn right": 2
+    },
+    "input_tokens": 22179,
+    "output_tokens": 36874,
+    "done": true,
+    "episode_return": 0.75390625,
+    "num_steps": 35,
+    "failed_candidates": [],
+    "mission": "open the door",
+    "progression": 1.0,
+    "process_num": "ForkProcess-2",
+    "seed": 1763677114,
+    "agent": {
+        "type": "naive",
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "max_cot_history": 1,
+        "max_icl_history": 1000,
+        "cache_icl": false
+    },
+    "client": {
+        "client_name": "nvidia",
+        "model_id": "meta/muse-glimmer-30b",
+        "base_url": "https://integrate.api.nvidia.com/v1",
+        "generate_kwargs": {
+            "temperature": 1.0,
+            "max_tokens": 8192,
+            "thinking_budget": null
+        },
+        "timeout": 60,
+        "max_retries": 8,
+        "delay": 4,
+        "alternate_roles": false
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "task": "the_cooking_game",
+    "action_frequency": {
+        "go south": 1,
+        "open sliding door": 2,
+        "take tuna from stock with knife": 1,
+        "take nothing from stock with knife": 1,
+        "Take tuna with knife from shelf": 6,
+        "take nothing with knife": 13,
+        "take tuna with knife from shelf": 6,
+        "go north": 1,
+        "Take nothing with knife": 12,
+        "do\ncook\nwith\nchicken\neat\nmeal": 2,
+        "take anything with knife\neat meal": 1,
+        "take nothing with knife\n\neat meal": 1,
+        "eat meal": 3,
+        "do\neat\nmeal": 14,
+        "Do not cook anything": 4,
+        "take anything with knife": 1,
+        "What do you want to eat": 2,
+        "dir eat meal dir": 1,
+        "Do nothing": 3,
+        "cook food": 4,
+        "Please repeat your instruction": 1
+    },
+    "input_tokens": 102662,
+    "output_tokens": 450,
+    "done": true,
+    "episode_return": 0.0,
+    "num_steps": 80,
+    "failed_candidates": [],
+    "progression": 0.0,
+    "process_num": null,
+    "seed": 2530598617,
+    "agent": {
+        "type": "naive",
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "max_cot_history": 1,
+        "max_icl_history": 1000,
+        "cache_icl": false
+    },
+    "client": {
+        "client_name": "vllm",
+        "model_id": "qwen2.5:0.5b",
+        "base_url": "http://127.0.0.1:11434/v1",
+        "generate_kwargs": {
+            "temperature": 1.0,
+            "max_tokens": 1024,
+            "thinking_budget": null
+        },
+        "timeout": 600,
+        "max_retries": 5,
+        "delay": 2,
+        "alternate_roles": false
+    }
+}

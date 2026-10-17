@@ -1,0 +1,35 @@
+{
+    "progression_percentage": 0.0,
+    "standard_error": 0.0,
+    "average_steps": 102.4,
+    "episodes_played": 10,
+    "tasks": {
+        "BabyAI-MixedTrainLocal-v0/pickup": {
+            "progression_percentage": 0.0,
+            "standard_error": 0.0,
+            "episodes_played": 2
+        },
+        "BabyAI-MixedTrainLocal-v0/open": {
+            "progression_percentage": 0.0,
+            "standard_error": 0.0,
+            "episodes_played": 2
+        },
+        "BabyAI-MixedTrainLocal-v0/pick_up_seq_go_to": {
+            "progression_percentage": 0.0,
+            "standard_error": 0.0,
+            "episodes_played": 2
+        },
+        "BabyAI-MixedTrainLocal-v0/goto": {
+            "progression_percentage": 0.0,
+            "standard_error": 0.0,
+            "episodes_played": 2
+        },
+        "BabyAI-MixedTrainLocal-v0/putnext": {
+            "progression_percentage": 0.0,
+            "standard_error": 0.0,
+            "episodes_played": 2
+        }
+    },
+    "input_tokens": 748304,
+    "output_tokens": 5312
+}

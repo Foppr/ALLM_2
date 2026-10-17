@@ -1,0 +1,58 @@
+{
+    "task": "the_cooking_game",
+    "action_frequency": {
+        "open south": 2,
+        "open sliding door": 1,
+        "go south": 3,
+        "look": 6,
+        "goalmessageGoal: Find the recipe find and prepare food according to the recipe and finally prepare and eat the meal": 1,
+        "go east": 13,
+        "go west": 10,
+        "open front door": 1,
+        "go north": 8,
+        "open patio door": 1,
+        "open wooden door": 1,
+        "examine cookbook": 4,
+        "Thank you": 1,
+        "examine fridge": 1,
+        "open fridge": 1,
+        "open frostedglass door": 15,
+        "open frosted glass door": 7,
+        "examine corridor": 1,
+        "open toolbox": 1,
+        "examine toolbox": 1,
+        "goal": 1
+    },
+    "input_tokens": 145802,
+    "output_tokens": 17040,
+    "done": true,
+    "episode_return": 0.0,
+    "num_steps": 80,
+    "failed_candidates": [],
+    "progression": 0.0,
+    "process_num": "ForkProcess-4",
+    "seed": 2200303527,
+    "agent": {
+        "type": "naive",
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "max_cot_history": 1,
+        "max_icl_history": 1000,
+        "cache_icl": false
+    },
+    "client": {
+        "client_name": "nvidia",
+        "model_id": "openai/gpt-oss-20b",
+        "base_url": "https://integrate.api.nvidia.com/v1",
+        "generate_kwargs": {
+            "temperature": 1.0,
+            "max_tokens": 8192,
+            "thinking_budget": null
+        },
+        "timeout": 60,
+        "max_retries": 8,
+        "delay": 4,
+        "alternate_roles": false
+    }
+}

@@ -1,0 +1,21 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go forward,,"a wall 3 steps forward
+a wall 3 steps left
+a blue ball 1 step left and 2 steps forward",0,False
+1,,,"
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 3 steps left
+a blue ball 1 step left and 1 step forward",0,False
+2,,,"
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a blue ball 1 step left",0,False
+3,turn left,,"a wall 1 step right
+a blue ball 1 step forward",0.94375,True

@@ -1,0 +1,286 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go south,,"You have to open the sliding door first.
+
+
+>                                                                                                                                -= Supermarket =-0/2",0,False
+1,open sliding door,,"You open sliding door.
+
+
+>                                                                                                                                -= Supermarket =-0/3",0,False
+2,open sliding door,,"That's already open.
+
+
+>                                                                                                                                -= Supermarket =-0/4",0,False
+3,take tuna from stock with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/4",0,False
+4,take nothing from stock with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/4",0,False
+5,Take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/4",0,False
+6,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/4",0,False
+7,take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/4",0,False
+8,Take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/4",0,False
+9,take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/4",0,False
+10,go north,,"You can't go that way.
+
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+11,Take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+12,take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+13,Take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+14,take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+15,Take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+16,take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+17,Take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+18,take tuna with knife from shelf,,"I only understood you as far as wanting to take the white tuna.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+19,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+20,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+21,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+22,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+23,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+24,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+25,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+26,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+27,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+28,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+29,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+30,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+31,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+32,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+33,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+34,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+35,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+36,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+37,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+38,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+39,"do
+cook
+with
+chicken
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+40,"do
+cook
+with
+chicken
+eat
+meal",,"What do you want to cook?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+41,"take anything with knife
+eat meal",,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+42,"take nothing with knife
+
+eat meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+43,eat meal,,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+44,eat meal,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+45,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+46,"do
+eat
+meal",,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+47,eat meal,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+48,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+49,Take nothing with knife,,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+50,Do not cook anything,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+51,take anything with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+52,take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+53,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+54,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+55,What do you want to eat,,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+56,Take nothing with knife,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+57,Do not cook anything,,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+58,dir eat meal dir,,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+59,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+60,"do
+eat
+meal",,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+61,Do nothing,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+62,Do nothing,,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+63,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+64,Do not cook anything,,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+65,Do nothing,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+66,cook food,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+67,cook food,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+68,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+69,"do
+eat
+meal",,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+70,cook food,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+71,cook food,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+72,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+73,Do not cook anything,,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+74,Please repeat your instruction,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+75,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+76,"do
+eat
+meal",,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+77,What do you want to eat,,"You can't see any such thing.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+78,"do
+eat
+meal",,"That's not a verb I recognise.
+
+>                                                                                                                                -= Supermarket =-0/5",0,False
+79,"do
+eat
+meal",,"What do you want to eat?
+
+>                                                                                                                                -= Supermarket =-0/5",0,True

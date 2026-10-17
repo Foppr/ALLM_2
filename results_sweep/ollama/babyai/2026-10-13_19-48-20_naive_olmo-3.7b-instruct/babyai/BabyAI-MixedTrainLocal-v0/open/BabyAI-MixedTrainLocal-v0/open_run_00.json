@@ -1,0 +1,50 @@
+{
+    "task": "BabyAI-MixedTrainLocal-v0/open",
+    "action_frequency": {
+        "turn right": 2,
+        "turn left": 2,
+        "go forward": 98,
+        "toggle": 24,
+        "pick up": 1,
+        "drop": 1
+    },
+    "input_tokens": 87128,
+    "output_tokens": 443,
+    "done": true,
+    "episode_return": 0.0,
+    "num_steps": 128,
+    "failed_candidates": [
+        "end episode",
+        "Im sorry but I am in an infinite loop here To progress I probably need to try to look for another clue or interact with the blue key when its close Please let me try:\n\ngo forward",
+        "Im in a loop because the observation is the same Lets try toggling instead to check if theres an interaction:\n\ntoggle",
+        "Please provide the next observation to continue the game I am unable to progress without it",
+        "end"
+    ],
+    "mission": "open the door",
+    "progression": 0.0,
+    "process_num": null,
+    "seed": 3351750655,
+    "agent": {
+        "type": "naive",
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "max_cot_history": 1,
+        "max_icl_history": 1000,
+        "cache_icl": false
+    },
+    "client": {
+        "client_name": "vllm",
+        "model_id": "olmo-3:7b-instruct",
+        "base_url": "http://127.0.0.1:11434/v1",
+        "generate_kwargs": {
+            "temperature": 1.0,
+            "max_tokens": 1024,
+            "thinking_budget": null
+        },
+        "timeout": 600,
+        "max_retries": 5,
+        "delay": 2,
+        "alternate_roles": false
+    }
+}

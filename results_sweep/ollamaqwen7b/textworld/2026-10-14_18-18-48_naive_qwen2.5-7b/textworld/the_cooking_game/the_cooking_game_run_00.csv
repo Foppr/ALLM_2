@@ -1,0 +1,245 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,take cheese from showcase examine cheese go south,,"I only understood you as far as wanting to take the block of cheese from the showcase.
+
+>                                                                                                                                -= Supermarket =-0/1",0,False
+1,take cheese from showcase,,"You take the block of cheese from the showcase.
+
+
+Your score has just gone up by one point.
+
+>                                                                                                                                -= Supermarket =-1/2",1,False
+2,examine cheese go south,,"I only understood you as far as wanting to examine the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/2",1,False
+3,examine cheese,,"You couldn't pay me to eat that block of cheese.
+
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+4,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+5,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+6,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+7,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+8,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+9,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+10,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+11,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+12,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+13,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+14,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+15,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+16,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+17,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+18,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+19,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+20,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+21,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+22,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+23,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+24,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+25,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+26,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+27,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+28,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+29,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+30,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+31,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+32,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+33,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+34,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+35,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+36,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+37,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+38,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+39,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+40,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+41,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+42,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+43,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+44,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+45,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+46,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+47,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+48,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+49,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+50,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+51,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+52,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+53,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+54,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+55,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+56,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+57,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+58,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+59,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+60,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+61,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+62,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+63,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+64,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+65,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+66,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+67,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+68,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+69,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+70,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+71,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+72,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+73,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+74,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+75,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+76,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+77,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+78,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,False
+79,take cheese go south,,"I only understood you as far as wanting to take the block of cheese.
+
+>                                                                                                                                -= Supermarket =-1/3",1,True
