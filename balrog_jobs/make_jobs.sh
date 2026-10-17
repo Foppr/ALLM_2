@@ -8,8 +8,9 @@ rm -f "$HERE"/jobs/*.sh
 
 n=0
 for line in "${MODELS[@]}"; do
-  IFS='|' read -r tag client base model keyvar workers extra <<< "$line"
-  for env in "${ENVS[@]}"; do
+  IFS='|' read -r tag client base model keyvar workers extra model_envs <<< "$line"
+  if [[ -n "${model_envs:-}" ]]; then read -ra these_envs <<< "$model_envs"; else these_envs=("${ENVS[@]}"); fi
+  for env in "${these_envs[@]}"; do
     job="$HERE/jobs/${tag}_${env}.sh"
 
     budget=""
@@ -34,14 +35,29 @@ $key_line
 cd "\$BALROG_DIR"
 OUT="\$RESULTS_DIR/$tag/$env"
 mkdir -p "\$OUT"
+# Resume the most recent run in \$OUT (BALROG skips episodes that already have a .json).
+# Start fresh instead with:  FRESH=1 ./run_all.sh <model>
+RESUME=""
+LAST="\$(ls -d "\$OUT"/*/ 2>/dev/null | sort | tail -1)"
+if [[ -n "\$LAST" && "\${FRESH:-0}" != "1" ]]; then
+  LAST="\${LAST%/}"
+  [[ -f "\$LAST/eval.log" ]] && cp "\$LAST/eval.log" "\$LAST/eval.log.bak_\$(date +%m%d_%H%M)"
+  RESUME="eval.resume_from=\$LAST"
+  echo "resuming \$LAST"
+fi
 echo "[\$(date '+%F %T')] START $tag/$env"
 python eval.py \\
   agent.type=\$AGENT_TYPE \$AGENT_ARGS \\
   envs.names=$env \\
   client.client_name=$client client.model_id=$model $base_arg \\
-  eval.num_workers=$workers eval.output_dir="\$OUT" \\
+  eval.num_workers=$workers eval.output_dir="\$OUT" \$RESUME \\
   $budget $extra
 rc=\$?
+# eval.py exits 0 even when every API call failed; treat "no finished episodes" as a failure
+RUN="\$(ls -d "\$OUT"/*/ 2>/dev/null | sort | tail -1)"
+n_ep=\$(find "\$RUN" -name '*_run_*.json' 2>/dev/null | wc -l)
+echo "finished episodes in \$RUN: \$n_ep"
+[[ \$rc -eq 0 && \$n_ep -eq 0 ]] && rc=2
 echo "[\$(date '+%F %T')] END $tag/$env (exit \$rc)"
 exit \$rc
 EOF

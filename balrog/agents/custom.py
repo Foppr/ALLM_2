@@ -27,13 +27,15 @@ class CustomAgent(BaseAgent):
 
         plan_text = f"Current Plan:\n{self.plan}\n" if self.plan else "You have no plan yet.\n"
 
-        planning_instructions = """
+        planning_instructions = f"""
 Review the current plan above if present. Decide whether to continue with it or make changes.
 If you make changes, provide the updated plan. Then, provide the next action to take.
 You must output an action at every step.
 Format your answer in the following way:
 PLAN: <your updated plan if changed, or "No changes to the plan." if the current plan is good>
 ACTION: <your next action>
+
+Make sure your output move follows the EXACT wording from the instruction prompt. As a reminder: {self.prompt_builder.system_prompt}.
         """.strip()
 
         messages = self.prompt_builder.get_prompt()
@@ -44,6 +46,8 @@ ACTION: <your next action>
 
         # Extract the plan and action from the LLM's response
         plan, action = self._extract_plan_and_action(response.completion)
+
+        # plan += f'{self.prompt_builder.system_prompt}'
 
         # Update the internal plan if it has changed
         if plan != "No changes to the plan.":
@@ -67,5 +71,10 @@ ACTION: <your next action>
 
         plan = plan_match.group(1).strip() if plan_match else "No changes to the plan."
         action = action_match.group(1).strip() if action_match else None
+
+        # ADD: actions kept being invalid because of capital letters, which in our opinion is not a mistake on the
+        # LLM's part
+        if action is not None:
+            action = action.lower()
 
         return plan, action

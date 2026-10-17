@@ -14,7 +14,13 @@ if [[ $# -gt 0 ]]; then tags=("$@"); else
 fi
 
 for tag in "${tags[@]}"; do
-  if [[ "$tag" == "ollama" ]] && ! curl -s http://127.0.0.1:11434/api/version > /dev/null; then
+  pidf="$HERE/state/lane_$tag.pid"
+  if [[ -f "$pidf" ]] && kill -0 "$(cat "$pidf")" 2>/dev/null; then
+    echo "lane $tag is already running, skipping"; continue
+  fi
+  # jobs left "running" by a lane that died are really interrupted -> mark failed so they re-run
+  for r in "$HERE"/state/"${tag}"_*.running; do [[ -f "$r" ]] && mv "$r" "${r%.running}.failed"; done
+  if [[ "$tag" == ollama* ]] && ! curl -s http://127.0.0.1:11434/api/version > /dev/null; then
     if command -v ollama > /dev/null; then
       echo "starting ollama serve"
       OLLAMA_CONTEXT_LENGTH=16384 setsid nohup ollama serve > "$HERE/logs/ollama_serve.log" 2>&1 < /dev/null &
