@@ -145,7 +145,7 @@ class HistoryPromptBuilder:
                         del event[flag]
             elif event["type"] == "action":
                 if event.get("reasoning") is not None:
-                    content = "Previous plan:\n" + event["reasoning"]
+                    content = "Previous reasoning:\n" + event["reasoning"]
                 else:
                     content = event["action"]
                 message = Message(role="assistant", content=content)

@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 
 from balrog.agents.base import BaseAgent
 
@@ -10,6 +11,8 @@ class CustomAgent(BaseAgent):
         super().__init__(client_factory, prompt_builder)
         self.client = client_factory()
         self.plan = None
+        self.obs_history = []
+        self.act_history = []
 
     def act(self, obs, prev_action=None):
         """Generate the next action and update the plan based on the current observation.
@@ -25,39 +28,57 @@ class CustomAgent(BaseAgent):
             self.prompt_builder.update_action(prev_action)
         self.prompt_builder.update_observation(obs)
 
-        plan_text = f"Current Plan:\n{self.plan}\n" if self.plan else "You have no plan yet.\n"
-
-        planning_instructions = f"""
-Review the current plan above if present. Decide whether to continue with it or make changes.
-If you make changes, provide the updated plan. Then, provide the next action to take.
-You must output an action at every step.
-Format your answer in the following way:
-PLAN: <your updated plan if changed, or "No changes to the plan." if the current plan is good>
-ACTION: <your next action>
-
-Make sure your output move follows the EXACT wording from the instruction prompt. As a reminder: {self.prompt_builder.system_prompt}.
+        planning_instructions = f"""Solve the puzzle by making a plan, carefully considering the observation, what your surroundings look like and where you might want to go to achieve the goal.
+        Always start your response with "Let's think step by step". After your reasoning steps, end the response with "ACTION: <your action>". 
+        It is VERY important to follow the exact phrasing of the action as given in the task description, otherwise it is invalid.
         """.strip()
+
+        # ADD: Detect if the agent is going in circles
+        obs_text = obs["text"]["long_term_context"]
+        warning = ""
+        if obs_text in self.obs_history[-4:]:
+            warning = ("\n\nWARNING: you saw this exact observation a few steps ago. "
+                       f"Your last actions were: {', '.join(self.act_history[-4:])}. "
+                       "You are going in circles. Turning back and forth does not explore anything new.\n")
+        self.obs_history.append(obs_text)
 
         messages = self.prompt_builder.get_prompt()
         if messages and messages[-1].role == "user":
-            messages[-1].content += "\n\n" + plan_text + "\n" + planning_instructions
+            messages[-1].content += "\n\n" + planning_instructions + warning
 
-        response = self.client.generate(messages)
+        # append `warning` to messages[-1].content; after choosing, self.act_history.append(final_action)
 
-        # Extract the plan and action from the LLM's response
-        plan, action = self._extract_plan_and_action(response.completion)
+        self.last_prompt = "\n\n".join(f"[{m.role}]\n{m.content}" for m in messages)  # ADD prompt to agent
 
-        # plan += f'{self.prompt_builder.system_prompt}'
+        # ADD: Self-consistency - several reasoning paths, then a majority vote
+        samples = []  # (response, action) per sample
+        for i in range(5):
+            r = self.client.generate(messages)
+            samples.append((r, self._extract_action(r.completion)))
 
-        # Update the internal plan if it has changed
-        if plan != "No changes to the plan.":
-            self.plan = plan
+        valid = [a for _, a in samples if a]  # ignore samples without a valid action
+        if valid:
+            final_action, votes = Counter(valid).most_common(1)[0]
+        else:
+            final_action, votes = None, 0  # evaluator falls back to its default action
 
-        # Save the plan in the response.reasoning field and the action in response.completion
-        response = response._replace(reasoning=plan, completion=action)
-        return response
+        # ADD: keep track of action_history
+        self.act_history.append(final_action)
 
-    def _extract_plan_and_action(self, response_text):
+        # use the reasoning of one sample that voted for the winner
+        winner = next((r for r, a in samples if a == final_action), samples[0][0])
+
+        self.raw_response = "\n\n".join(f"Response {i + 1} -> {a}:\n{r.completion}" for i, (r, a) in enumerate(samples))
+        self.prompt_builder.update_reasoning(winner.completion or "")  # only the winning reasoning goes into history
+
+        return winner._replace(
+            completion=final_action,
+            reasoning=f"votes: {dict(Counter(a for _, a in samples))}\n\n{winner.completion}",
+            input_tokens=sum(r.input_tokens or 0 for r, _ in samples),
+            output_tokens=sum(r.output_tokens or 0 for r, _ in samples),
+        )
+
+    def _extract_action(self, response_text):
         """Extract the plan and action from the LLM's response text.
 
         Args:
@@ -66,15 +87,12 @@ Make sure your output move follows the EXACT wording from the instruction prompt
         Returns:
             tuple: A tuple containing the extracted plan and action.
         """
-        plan_match = re.search(r"PLAN:\s*(.*?)(?=\nACTION:|\Z)", response_text, re.IGNORECASE | re.DOTALL)
         action_match = re.search(r"ACTION:\s*(.*)", response_text, re.IGNORECASE | re.DOTALL)
 
-        plan = plan_match.group(1).strip() if plan_match else "No changes to the plan."
+        # CHANGE: do not penalize LLM for capitalizing action or adding punctuation
         action = action_match.group(1).strip() if action_match else None
+        if action:
+            action = action.splitlines()[0]  # only the first line
+            action = action.strip().strip(".!\"'`*").lower()  # drop trailing period, quotes, markdown **
 
-        # ADD: actions kept being invalid because of capital letters, which in our opinion is not a mistake on the
-        # LLM's part
-        if action is not None:
-            action = action.lower()
-
-        return plan, action
+        return action
