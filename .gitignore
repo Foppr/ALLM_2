@@ -1,4 +1,7 @@
 SECRETS
+results/
+ollama_models/
+ollama/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
