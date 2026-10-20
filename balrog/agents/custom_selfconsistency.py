@@ -4,7 +4,7 @@ from collections import Counter
 from balrog.agents.base import BaseAgent
 
 
-class CustomAgent(BaseAgent):
+class Custom_SelfConsistency_Agent(BaseAgent):
     """An agent that generates actions and plans based on observations with a customizable approach."""
 
     def __init__(self, client_factory, prompt_builder):

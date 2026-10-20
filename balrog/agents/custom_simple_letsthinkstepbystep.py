@@ -3,7 +3,7 @@ import re
 from balrog.agents.base import BaseAgent
 
 
-class CustomAgent(BaseAgent):
+class Custom_SLTSBS_Agent(BaseAgent):
     """An agent that generates actions and plans based on observations with a customizable approach."""
 
     def __init__(self, client_factory, prompt_builder):
@@ -34,7 +34,7 @@ class CustomAgent(BaseAgent):
         if messages and messages[-1].role == "user":
             messages[-1].content += "\n\n" + planning_instructions
 
-        self.last_prompt = "\n\n".join(f"[{m.role}]\n{m.content}" for m in messages)  # ADD prompt to agent
+        self.last_prompt = "\n\n".join(f"[{m.role}]\n{m.content}" for m in messages)  # CSV: ADD prompt to agent
 
         response = self.client.generate(messages)
         self.raw_response = response

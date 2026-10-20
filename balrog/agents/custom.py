@@ -39,7 +39,9 @@ class CustomAgent(BaseAgent):
         if obs_text in self.obs_history[-4:]:
             warning = ("\n\nWARNING: you saw this exact observation a few steps ago. "
                        f"Your last actions were: {', '.join(self.act_history[-4:])}. "
-                       "You are going in circles. Turning back and forth does not explore anything new.\n")
+                       "You are going in circles. Turning back and forth does not explore anything new, nor does it make sense to keep using the same action when the observation does not change"
+                       "Look at all possible actions again, and consider if any of these is more viable."
+                       ".\n")
         self.obs_history.append(obs_text)
 
         messages = self.prompt_builder.get_prompt()
