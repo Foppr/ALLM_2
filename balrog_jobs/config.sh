@@ -19,7 +19,6 @@ KEYS_FILE="$HOME/balrog_keys.env"
 # Where results go (one subfolder per model/env)
 RESULTS_DIR="$BALROG_DIR/results_sweep"
 
-AGENT_TYPE="custom"
 AGENT_ARGS="agent.max_image_history=0 agent.max_text_history=16"
 
 # ------------------------------------------------------------
@@ -30,22 +29,16 @@ AGENT_ARGS="agent.max_image_history=0 agent.max_text_history=16"
 #   client_name=vllm   sends requests to base_url with a dummy key (works for Ollama)
 # ------------------------------------------------------------
 MODELS=(
-#  "nim|nvidia|https://integrate.api.nvidia.com/v1|openai/gpt-oss-20b|NVIDIA_API_KEY|4|client.max_retries=8 client.delay=4"
-#  # second NIM model: own per-model quota, same key. Copy the exact ID from build.nvidia.com
-#   "nim2|nvidia|https://integrate.api.nvidia.com/v1|meta/muse-glimmer-30b|NVIDIA_API_KEY|4|client.max_retries=8 client.delay=4"
-##  "mistral|nvidia|https://api.mistral.ai/v1|mistral-medium-latest|MISTRAL_API_KEY|1|client.max_retries=8 client.delay=5"  # DROP MISTRAL: smallest model also gives 429
-#  # Gemini free tier is too slow for everything: limited to the two cheapest envs
-#  "gemini38|gemini|-|gemini-3.8-flash|GEMINI_API_KEY|1|client.max_retries=10 client.delay=10|babyai textworld"
-#  "gemini35lite|gemini|-|gemini-3.5-flash-lite|GEMINI_API_KEY|1|client.max_retries=10 client.delay=10|babyai textworld"
-#  # non-thinking model: thinking models (qwen3.x) spent all 8192 tokens thinking and returned nothing
-#  "ollama|vllm|http://127.0.0.1:11434/v1|olmo-3:7b-instruct|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
-
+"nim|nvidia|https://integrate.api.nvidia.com/v1|openai/gpt-oss-20b|NVIDIA_API_KEY|4|client.max_retries=8 client.delay=4"
 "ollamaqwen05b|vllm|http://127.0.0.1:11434/v1|qwen2.5:0.5b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
-
-#"ollamaqwen7b|vllm|http://127.0.0.1:11434/v1|qwen2.5:7b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
+"ollamaqwen7b|vllm|http://127.0.0.1:11434/v1|qwen2.5:7b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
+"ollamaqwen32b|vllm|http://127.0.0.1:11434/v1|qwen2.5:32b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
+"ollamaqwen72b|vllm|http://127.0.0.1:11434/v1|qwen2.5:72b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
 )
 
 ENVS=(babyai babaisai textworld crafter nle minihack)
+AGENT_TYPES=("custom_selfconsistency" "custom_simple_ltsbs" "custom_selfconsistency_detect_cycles")
+
 
 # ------------------------------------------------------------
 # Episode budget. BALROG's defaults (babyai 10/task, babaisai 3/task x 40 tasks,

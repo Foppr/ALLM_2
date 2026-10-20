@@ -9,6 +9,11 @@ from .naive import NaiveAgent
 from .robust_naive import RobustNaiveAgent
 from .robust_cot import RobustCoTAgent
 
+# CUSTOM AGENTS
+from .custom_simple_letsthinkstepbystep import Custom_SLTSBS_Agent
+from .custom_selfconsistency import Custom_SelfConsistency_Agent
+from .custom_selfconsistency_detect_cycles import Custom_SelfConsistencyCycles_Agent
+
 
 class AgentFactory:
     """Factory class for creating agents based on configuration.
@@ -56,6 +61,14 @@ class AgentFactory:
             return RobustNaiveAgent(client_factory, prompt_builder)
         elif self.config.agent.type == "robust_cot":
             return RobustCoTAgent(client_factory, prompt_builder, config=self.config)
+
+        # NEW CUSTOM AGENTS
+        elif self.config.agent.type == 'custom_simple_ltsbs':
+            return Custom_SLTSBS_Agent(client_factory, prompt_builder)
+        elif self.config.agent.type == 'custom_selfconsistency':
+            return Custom_SelfConsistency_Agent(client_factory, prompt_builder)
+        elif self.config.agent.type == 'custom_selfconsistency_detect_cycles':
+            return Custom_SelfConsistencyCycles_Agent(client_factory, prompt_builder)
 
         else:
             raise ValueError(f"Unknown agent type: {self.config.agent}")
