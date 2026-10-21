@@ -36,7 +36,7 @@ MODELS=(
 )
 
 ENVS=(babyai babaisai textworld crafter)  # NO NLE OR MINIHACK
-AGENT_TYPES=("custom_simple_ltsbs" "custom_selfconsistency_detect_cycles" "tree_of_thought"  "reAct")  # 3 AGENTS
+AGENT_TYPES=("custom_simple_ltsbs" "custom_selfconsistency_detect_cycles" "custom_tree_of_thoughts"  "reAct")  # 3 AGENTS
 
 
 # ------------------------------------------------------------

@@ -13,6 +13,7 @@ from .robust_cot import RobustCoTAgent
 from .custom_simple_letsthinkstepbystep import Custom_SLTSBS_Agent
 from .custom_selfconsistency import Custom_SelfConsistency_Agent
 from .custom_selfconsistency_detect_cycles import Custom_SelfConsistencyCycles_Agent
+from .custom_tree_of_thoughts import ToT
 from .reAct import ReActAgent
 
 
@@ -69,6 +70,8 @@ class AgentFactory:
         elif self.config.agent.type == 'custom_selfconsistency':
             return Custom_SelfConsistency_Agent(client_factory, prompt_builder)
         elif self.config.agent.type == 'custom_selfconsistency_detect_cycles':
+            return Custom_SelfConsistencyCycles_Agent(client_factory, prompt_builder)
+        elif self.config.agent.type == 'custom_tree_of_thoughts':
             return Custom_SelfConsistencyCycles_Agent(client_factory, prompt_builder)
 
         # SELF-REFLECTION (ReAct)
