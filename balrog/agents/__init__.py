@@ -13,6 +13,7 @@ from .robust_cot import RobustCoTAgent
 from .custom_simple_letsthinkstepbystep import Custom_SLTSBS_Agent
 from .custom_selfconsistency import Custom_SelfConsistency_Agent
 from .custom_selfconsistency_detect_cycles import Custom_SelfConsistencyCycles_Agent
+from .reAct import ReActAgent
 
 
 class AgentFactory:
@@ -69,6 +70,10 @@ class AgentFactory:
             return Custom_SelfConsistency_Agent(client_factory, prompt_builder)
         elif self.config.agent.type == 'custom_selfconsistency_detect_cycles':
             return Custom_SelfConsistencyCycles_Agent(client_factory, prompt_builder)
+
+        # SELF-REFLECTION (ReAct)
+        elif self.config.agent.type == 'reAct':
+            return ReActAgent(client_factory, prompt_builder)
 
         else:
             raise ValueError(f"Unknown agent type: {self.config.agent}")

@@ -5,7 +5,9 @@ set -uo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 tag="$1"
 mkdir -p "$HERE/state" "$HERE/logs"
+shopt -s nullglob
 for job in "$HERE"/jobs/"${tag}"_*.sh; do
+  [[ -f "$job" ]] || continue
   name="$(basename "$job" .sh)"
   [[ -f "$HERE/state/$name.done" ]] && { echo "skip $name (done)"; continue; }
   rm -f "$HERE/state/$name.failed"

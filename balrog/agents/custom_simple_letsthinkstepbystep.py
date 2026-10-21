@@ -38,7 +38,9 @@ class Custom_SLTSBS_Agent(BaseAgent):
 
         response = self.client.generate(messages)
         self.raw_response = response
-        self.prompt_builder.update_reasoning(response.completion or "")  # <-- store the full answer
+
+        # # COMMENT OUT: update reasoning, this is technically self-reflection
+        # self.prompt_builder.update_reasoning(response.completion or "")  # <-- store the full answer
 
         # Extract the plan and action from the LLM's response
         action = self._extract_action(response.completion)

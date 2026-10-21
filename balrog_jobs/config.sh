@@ -17,9 +17,10 @@ CONDA_ENV="balrog"
 KEYS_FILE="$HOME/balrog_keys.env"
 
 # Where results go (one subfolder per model/env)
-RESULTS_DIR="$BALROG_DIR/results_sweep"
+RESULTS_DIR="$BALROG_DIR/results_sweep_2"
 
-AGENT_ARGS="agent.max_image_history=0 agent.max_text_history=16"
+# ADD SEED
+AGENT_ARGS="agent.max_image_history=0 agent.max_text_history=8 envs.env_kwargs.seed=42"
 
 # ------------------------------------------------------------
 # Models: one line each
@@ -30,14 +31,12 @@ AGENT_ARGS="agent.max_image_history=0 agent.max_text_history=16"
 # ------------------------------------------------------------
 MODELS=(
 "nim|nvidia|https://integrate.api.nvidia.com/v1|openai/gpt-oss-20b|NVIDIA_API_KEY|4|client.max_retries=8 client.delay=4"
-"ollamaqwen05b|vllm|http://127.0.0.1:11434/v1|qwen2.5:0.5b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
 "ollamaqwen7b|vllm|http://127.0.0.1:11434/v1|qwen2.5:7b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
 "ollamaqwen32b|vllm|http://127.0.0.1:11434/v1|qwen2.5:32b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
-"ollamaqwen72b|vllm|http://127.0.0.1:11434/v1|qwen2.5:72b|-|1|client.timeout=600 client.generate_kwargs.max_tokens=1024"
 )
 
-ENVS=(babyai babaisai textworld crafter nle minihack)
-AGENT_TYPES=("custom_selfconsistency" "custom_simple_ltsbs" "custom_selfconsistency_detect_cycles")
+ENVS=(babyai babaisai textworld crafter)  # NO NLE OR MINIHACK
+AGENT_TYPES=("custom_simple_ltsbs" "custom_selfconsistency_detect_cycles" "reAct")  # 3 AGENTS
 
 
 # ------------------------------------------------------------
@@ -47,7 +46,7 @@ AGENT_TYPES=("custom_selfconsistency" "custom_simple_ltsbs" "custom_selfconsiste
 # Use the SAME settings for every model so results stay comparable.
 # ------------------------------------------------------------
 FULL=0
-declare -A EPISODES=( [babyai]=2 [babaisai]=1 [textworld]=2 [crafter]=1 [nle]=1 [minihack]=1 )
+declare -A EPISODES=( [babyai]=1 [babaisai]=1 [textworld]=1 [crafter]=1)
 # Step cap per episode (empty = environment default). Capping crafter/nle lowers their scores
 # compared with the paper, but keeps runs to hours instead of days.
-declare -A MAX_STEPS=( [babyai]="" [babaisai]="" [textworld]="" [crafter]=300 [nle]=300 [minihack]="" )
+declare -A MAX_STEPS=( [babyai]=60 [babaisai]=80 [textworld]=80 [crafter]=2000)

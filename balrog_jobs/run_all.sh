@@ -7,8 +7,7 @@ set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 source "$HERE/config.sh"
 mkdir -p "$HERE/logs" "$HERE/state"
-[[ -d "$HERE/jobs" ]] && compgen -G "$HERE/jobs/*.sh" > /dev/null || "$HERE/make_jobs.sh"
-
+#"$HERE/make_jobs.sh"
 if [[ $# -gt 0 ]]; then tags=("$@"); else
   tags=(); for line in "${MODELS[@]}"; do tags+=("${line%%|*}"); done
 fi

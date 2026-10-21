@@ -54,7 +54,7 @@ class Custom_SelfConsistencyCycles_Agent(BaseAgent):
 
         # ADD: Self-consistency - several reasoning paths, then a majority vote
         samples = []  # (response, action) per sample
-        for i in range(5):
+        for i in range(3):  # CHANGE: 5 --> 3 steps for faster compute
             r = self.client.generate(messages)
             samples.append((r, self._extract_action(r.completion)))
 
@@ -71,7 +71,9 @@ class Custom_SelfConsistencyCycles_Agent(BaseAgent):
         winner = next((r for r, a in samples if a == final_action), samples[0][0])
 
         self.raw_response = "\n\n".join(f"Response {i + 1} -> {a}:\n{r.completion}" for i, (r, a) in enumerate(samples))
-        self.prompt_builder.update_reasoning(winner.completion or "")  # only the winning reasoning goes into history
+
+        # # COMMENT OUT: update reasoning, this is technically self-reflection
+        # self.prompt_builder.update_reasoning(winner.completion or "")  # only the winning reasoning goes into history
 
         return winner._replace(
             completion=final_action,
