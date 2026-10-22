@@ -26,20 +26,33 @@ for line in "${MODELS[@]}"; do
       key_line=""
       [[ "$keyvar" != "-" && "$client" != "gemini" ]] && key_line="export OPENAI_API_KEY=\"\${$keyvar:?$keyvar not set in \$KEYS_FILE}\""
 
-      # 2. Dynamic SLURM Resource Allocation
+# 2. Dynamic SLURM Resource Allocation
       if [[ "$tag" == ollama* ]]; then
-        # Local model: Needs a GPU and an isolated Ollama server instance
-        slurm_resources="#SBATCH --partition=gpu\n#SBATCH --gpus=1\n#SBATCH --mem=32G"
+        # Local model: Needs GPU-short (max 4h) and an isolated Ollama server
+        slurm_resources="#SBATCH --partition=gpu-short\n#SBATCH --gpus=1\n#SBATCH --time=04:00:00\n#SBATCH --mem=32G"
         setup_backend='export OLLAMA_HOST="127.0.0.1:$((10000 + SLURM_JOB_ID % 50000))"
+export OLLAMA_NUM_PARALLEL=1
+export OLLAMA_CONTEXT_LENGTH=8192
+
+# Bypass ZFS network storage by copying models to the node local scratch disk
+LOCAL_MODELS="/tmp/s2995387_ollama_$SLURM_JOB_ID"
+echo "Copying models to local node storage..."
+mkdir -p "$LOCAL_MODELS"
+cp -r "$HOME/ollama_models/"* "$LOCAL_MODELS/" 2>/dev/null || true
+export OLLAMA_MODELS="$LOCAL_MODELS"
+
 echo "Starting local Ollama server on $OLLAMA_HOST..."
-OLLAMA_CONTEXT_LENGTH=16384 setsid nohup ollama serve > "$HERE/logs/ollama_$SLURM_JOB_ID.log" 2>&1 &
+setsid nohup ollama serve > "$HERE/logs/ollama_$SLURM_JOB_ID.log" 2>&1 &
 OLLAMA_PID=$!
-sleep 10'
+sleep 15'
+
         eval_base_arg='client.base_url=http://$OLLAMA_HOST/v1'
-        teardown_backend='kill $OLLAMA_PID'
+
+        teardown_backend='kill $OLLAMA_PID 2>/dev/null || true
+rm -rf "$LOCAL_MODELS"'
       else
-        # Cloud API: Only needs CPU logic
-        slurm_resources="#SBATCH --partition=cpu\n#SBATCH --cpus-per-task=4\n#SBATCH --mem=8G"
+        # Cloud API: CPU partition (allows up to 24h / 7d)
+        slurm_resources="#SBATCH --partition=cpu-zen4\n#SBATCH --cpus-per-task=4\n#SBATCH --time=24:00:00\n#SBATCH --mem=8G"
         setup_backend=""
         eval_base_arg="client.base_url=$base"
         teardown_backend=""
@@ -48,11 +61,9 @@ sleep 10'
       # 3. Write the .slurm script
       cat > "$job" <<EOF
 #!/usr/bin/env bash
-#SBATCH --job-name=${tag}_${env}
+#SBATCH --job-name=${tag}_${env}_${agent}
 #SBATCH --output=${HERE}/logs/%x_%j.out
-#SBATCH --time=24:00:00
 $(echo -e "$slurm_resources")
-
 set -uo pipefail
 HERE="${HERE}"
 source "\$HERE/config.sh"

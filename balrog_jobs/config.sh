@@ -2,16 +2,15 @@
 #  config.sh: edit this file, then run ./make_jobs.sh
 # ============================================================
 
-source ../.venv/bin/activate
+# Comment out or delete the old .venv line:
+# source ../.venv/bin/activate
 
-export PATH="/local/ALLM_2/ollama/bin:$PATH"
-export OLLAMA_MODELS="/local/ALLM_2/ollama_models"   # keep large model files out of your (probably small) home folder
-
-# Path to your BALROG checkout on the university server
-BALROG_DIR="/local/ALLM_2"
+export PATH="$HOME/ollama/bin:$PATH"
+export OLLAMA_MODELS="$HOME/ollama_models"
+BALROG_DIR="$HOME/ALLM_2"
 
 # Conda env to activate inside every job (leave empty to use whatever python is on PATH)
-CONDA_ENV="balrog"
+CONDA_ENV="/zfsstore/user/s2995387/miniforge3/envs/balrog"
 
 # File with your API keys (see keys.env.example). Keep it out of git!
 KEYS_FILE="$HOME/balrog_keys.env"
@@ -36,7 +35,7 @@ MODELS=(
 )
 
 ENVS=(babyai babaisai textworld crafter)  # NO NLE OR MINIHACK
-AGENT_TYPES=("custom_simple_ltsbs" "custom_selfconsistency_detect_cycles" "custom_tree_of_thoughts"  "reAct")  # 3 AGENTS
+AGENT_TYPES=("naive" "custom_simple_ltsbs" "custom_selfconsistency_detect_cycles" "custom_tree_of_thoughts"  "reAct")  # 3 AGENTS
 
 
 # ------------------------------------------------------------
